@@ -19,7 +19,7 @@ module.exports = env => (merge(common(env), {
     plugins: [
         //依赖分析
         new BundleAnalyzerPlugin({
-            analyzerHost: '127.0.0.1',
+            analyzerHost: 'localhost',
             //  将在“服务器”模式下使用的端口启动HTTP服务器。
             analyzerPort: 9080,
             openAnalyzer: false,

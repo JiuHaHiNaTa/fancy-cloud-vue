@@ -1,23 +1,14 @@
-import { createApp } from 'vue' // Vue 3.x 引入 vue 的形式
-import VueRouter from 'vue-router'
+import {
+  createApp
+} from 'vue' // Vue 3.x 引入 vue 的形式
 import App from './App.vue' // 引入 APP 页面组建
-import Login from './views/login/login.vue'
+import router from './route/router'
 
-const routes = [
-    { path: '/', component: Login },
-]
+// 通过 createApp 初始化 app
+const app = createApp(App)
 
-// 3. 创建路由实例并传递 `routes` 配置
-// 你可以在这里输入更多的配置，但我们在这里
-// 暂时保持简单
-const router = VueRouter.createRouter({
-    // 4. 内部提供了 history 模式的实现。为了简单起见，我们在这里使用 hash 模式。
-    history: VueRouter.createWebHashHistory(),
-    routes, // `routes: routes` 的缩写
-  })
-  
-
-
-const app = createApp(App) // 通过 createApp 初始化 app
+//保证use和mount执行顺序
 app.use(router)
-app.mount('#app') 
+app.mount('#app')
+//所有的导航，包括第一个导航，现在都是异步的，这意味着，如果你使用一个 transition，你可能需要等待路由 ready 好后再挂载程序 需要保证app.mount必须在use执行完之后执行
+// router.isReady().then(() => app.mount('#app'))

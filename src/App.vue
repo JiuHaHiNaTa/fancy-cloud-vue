@@ -4,13 +4,23 @@
       <h1>Hello App!</h1>
     </div>
     <div>
-      <div><router-link to="/">Go to Login</router-link></div>
-      <div><router-link to="/logout">Go to Logout</router-link></div>
+      <div><router-link to="/demo">Go to Demo</router-link></div>
+      <div><router-link to="/login">Go to Login</router-link></div>
     </div>
-    <route-view></route-view>
+    <div>
+      <router-view></router-view>
+    </div>
   </div>
-</template> 
- 
+</template>
+
 <script>
-export default {};
+export default {
+
+};
 </script>
+
+<style scoped>    
+div {
+  text-align: center;
+} 
+</style>
