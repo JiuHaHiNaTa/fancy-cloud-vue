@@ -12,7 +12,7 @@ module.exports = env => ({
 		//配置输出文件名
 		filename: './js/[name].[fullhash].js',
 		//配置输出路径
-		path: path.resolve(__dirname, 'dist'),
+		path: path.resolve(__dirname, '/dist'),
 		/*
 		 * chunkFilename用来打包require.ensure方法中引入的模块,如果该方法中没有引入任何模块则不会生成任何chunk块文件
 		 * 比如在main.js文件中,require.ensure([],function(require){alert(11);}),这样不会打包块文件

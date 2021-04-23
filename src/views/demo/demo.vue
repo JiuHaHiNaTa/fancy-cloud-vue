@@ -30,18 +30,6 @@ export default {
     },
   },
   setup() {
-    const store = Store();
-    const route = useRoute();
-    const router = useRouter();
-    console.log(route, router);
-    const data = reactive({
-      msg: "我是首页",
-    });
-    let activeMenu = computed(() => store.state.activeMenu);
-    return {
-      data,
-      activeMenu,
-    };
   },
 };
 </script>
