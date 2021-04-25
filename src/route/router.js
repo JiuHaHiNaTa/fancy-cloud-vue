@@ -23,7 +23,7 @@ const routes = [{
     name: 'demo',
     component: () => demo,
     meta: {
-        requiresAuth: true
+        requiresAuth: false
     }
 }, {
     path: '/login',
